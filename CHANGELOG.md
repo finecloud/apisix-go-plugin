@@ -1,0 +1,46 @@
+---
+title: Changelog
+---
+
+<!--
+#
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+-->
+
+## Table of Contents
+
+- [0.2.0](#020)
+- [0.1.0](#010)
+
+## 0.2.0
+
+### Feature
+
+- :sunrise: feat: support Var API [#31](https://github.com/apache/apisix/pull/31)
+- :sunrise: feat: provide default APISIX_CONF_EXPIRE_TIME to simplify thing [#30](https://github.com/apache/apisix/pull/30)
+- :sunrise: feat: handle idempotent key in PrepareConf [#27](https://github.com/apache/apisix/pull/27)
+
+### Bugfix
+
+- fix: a race when reusing flatbuffers.Builder [#35](https://github.com/apache/apisix/pull/35)
+- fix: the default socket permission is not enough [#25](https://github.com/apache/apisix/pull/25)
+
+## 0.1.0
+
+### Feature
+
+- First implementation
