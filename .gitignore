@@ -40,3 +40,4 @@ cmd/server/cache/
 cmd/server/log/
 cache/
 log/
+go-runner
