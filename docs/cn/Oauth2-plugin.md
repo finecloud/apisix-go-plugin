@@ -23,24 +23,23 @@ ext-plugin:
 ```shell
 curl http://127.0.0.1:9080/apisix/admin/routes/1 -H 'X-API-KEY: edd1c9f034335f136f87ad84b625c8f1' -X PUT -d '
 {
-  "uri": "/get",
+  "uri": "/admin/user/info",
   "plugins": {
     "ext-plugin-pre-req": {
       "conf": [
-        { "name": "Oauth2", "value":"{\"api_key\":\"app\",\"password\":\"app\",\"check_url\":\"http:\/\/3.14.29.182:9999/auth/oauth/check_token\"}"}
+        { "name": "Oauth2", "value":"{\"api_key\":\"app\",\"password\":\"app\",\"check_url\":\"http://127.0.0.1:9999/auth/oauth/check_token\"}"}
       ]
     }
   },
   "upstream": {
         "type": "roundrobin",
         "nodes": {
-            "127.0.0.1:1980": 1
+            "127.0.0.1:9999": 1
         }
     }
 }
 '
 ```
-
 - 测试
 
 ```shell
