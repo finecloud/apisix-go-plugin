@@ -14,4 +14,4 @@ is generated from the files under `docs/`.
 
 # Plan
 
-1. Support Spring oauth2
+- [x] [Support Spring oauth2](docs/cn/Oauth2-plugin.md) for apisix gateway
