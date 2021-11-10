@@ -46,22 +46,30 @@ func (p *Oauth) Filter(conf interface{}, w http.ResponseWriter, r pkgHTTP.Reques
 	checkUrl := oauthConf.CheckUrl
 
 	if len(apiKey) == 0 {
+		log.Infof("oauth plugin not find conf for api_key")
+		w.WriteHeader(http.StatusUnauthorized)
 		return
 	}
 	if len(password) == 0 {
+		log.Infof("oauth plugin not find conf for password")
+		w.WriteHeader(http.StatusUnauthorized)
 		return
 	}
 	if len(checkUrl) == 0 {
+		log.Infof("oauth plugin not find conf for check_url")
+		w.WriteHeader(http.StatusUnauthorized)
 		return
 	}
 
 	authorization := r.Header().Get("Authorization")
 	if len(authorization) == 0 {
+		log.Infof("request header not find authorization")
 		w.WriteHeader(http.StatusUnauthorized)
 		return
 	}
 
 	if !strings.Contains(authorization, "Bearer") {
+		log.Infof("error authorization %s", authorization)
 		w.WriteHeader(http.StatusUnauthorized)
 		return
 	}
@@ -71,6 +79,7 @@ func (p *Oauth) Filter(conf interface{}, w http.ResponseWriter, r pkgHTTP.Reques
 	if isToken {
 		return
 	} else {
+		log.Infof("Illegal token %s", authorization)
 		w.WriteHeader(http.StatusUnauthorized)
 		return
 	}
