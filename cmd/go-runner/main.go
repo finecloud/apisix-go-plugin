@@ -94,7 +94,9 @@ func newRunCommand() *cobra.Command {
 				if err != nil {
 					log.Fatalf("could not create CPU profile: %s", err)
 				}
-				defer f.Close()
+				defer func(f *os.File) {
+					_ = f.Close()
+				}(f)
 				if err := pprof.StartCPUProfile(f); err != nil {
 					log.Fatalf("could not start CPU profile: %s", err)
 				}
@@ -106,7 +108,9 @@ func newRunCommand() *cobra.Command {
 					if err != nil {
 						log.Fatalf("could not create memory profile: %s", err)
 					}
-					defer f.Close()
+					defer func(f *os.File) {
+						_ = f.Close()
+					}(f)
 
 					runtime.GC()
 					if err := pprof.WriteHeapProfile(f); err != nil {
