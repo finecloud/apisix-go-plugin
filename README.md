@@ -18,3 +18,7 @@ is generated from the files under `docs/`.
 # Plan
 
 - [x] [Support Spring oauth2](docs/cn/Oauth2-plugin.md) for apisix gateway
+
+# attention
+
+**You need to build an executable for the OS**
