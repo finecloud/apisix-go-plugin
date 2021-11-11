@@ -58,3 +58,7 @@ curl --location --request GET 'http://127.0.0.1:9080/get' \
 - check_url: token检查点url
 - name: 扩展插件名
   /usr/local/apisix/plugin/finecloud/go-runner
+
+## 注意
+
+构建时 选择对应OS的架构生成`go-runner`
