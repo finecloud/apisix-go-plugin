@@ -92,7 +92,7 @@ func TestOauth2Success(t *testing.T) {
 
 	w := httptest.NewRecorder()
 	request := &TestRequest{}
-	request.Header().Set("Authorization", "Bearer 089225ae-a6e1-43ab-abd3-31eaa2c38e85")
+	request.Header().Set("Authorization", "Bearer 9fa7c1ac-4a29-48b2-83e8-d03be43f0ac6")
 	oauth.Filter(conf, w, request)
 	resp := w.Result()
 	//body, _ := ioutil.ReadAll(resp.Body)

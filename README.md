@@ -12,6 +12,9 @@ is generated from the files under `docs/`.
 
 > Apisix plug-in to manage the content of custom rules.
 
+- for make test
+![](docs/assets/images/test.png)
+
 # Plan
 
 - [x] [Support Spring oauth2](docs/cn/Oauth2-plugin.md) for apisix gateway
