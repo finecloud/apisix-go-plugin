@@ -69,7 +69,7 @@ func (r *TestRequest) Var(name string) ([]byte, error) {
 }
 
 func TestOauth2Fail(t *testing.T) {
-	in := []byte(`{"api_key":"app","password":"app","check_url":"http://3.14.29.182:9999/auth/oauth/check_token"}`)
+	in := []byte(`{"api_key":"app","password":"app","check_url":"http://dev.com:9999/auth/oauth/check_token"}`)
 	oauth := &Oauth{}
 	conf, err := oauth.ParseConf(in)
 	assert.Nil(t, err)
@@ -84,7 +84,7 @@ func TestOauth2Fail(t *testing.T) {
 }
 
 func TestOauth2Success(t *testing.T) {
-	in := []byte(`{"api_key":"app","password":"app","check_url":"http://3.14.29.182:9999/auth/oauth/check_token"}`)
+	in := []byte(`{"api_key":"app","password":"app","check_url":"http://dev.com:9999/auth/oauth/check_token"}`)
 	oauth := &Oauth{}
 	conf, err := oauth.ParseConf(in)
 	assert.Nil(t, err)
